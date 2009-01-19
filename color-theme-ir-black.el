@@ -19,14 +19,9 @@
         (*class*        "#FFFFB6")
         (*variable*     "#C6C5FE"))
 
-    ;; Chances are there's a better way to implement (color).
     (flet ((color (fgcolor &optional (bgcolor nil)) 
-                  (cond ((null bgcolor)
-                         `((t (:foreground ,fgcolor))))
-                        ((null fgcolor)
-                         `((t (:background ,bgcolor))))
-                        (t
-                         `((t (:foreground ,fgcolor :background ,bgcolor))))))
+                  `((t (,@(if (null fgcolor) nil `(:foreground ,fgcolor))
+                        ,@(if (null bgcolor) nil `(:background ,bgcolor))))))
            (face (face fgcolor &optional (bgcolor nil))
                  `(,(intern (concat "font-lock-" face "-face")) 
                    ,(color fgcolor bgcolor))))
