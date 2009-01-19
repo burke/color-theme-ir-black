@@ -1,7 +1,6 @@
-;; MIT License Copyright (c) 2008 Burke Libbey <burke@burkleibbey.org>
+;; MIT License Copyright (c) 2009 Burke Libbey <burke@burkleibbey.org>
 
 (defun color-theme-ir-black ()
-  "Ported from a similar vim theme by Burke Libbey"
   (interactive)
   (color-theme-install
 	'(color-theme-ir-black
