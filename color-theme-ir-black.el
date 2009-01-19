@@ -20,8 +20,8 @@
         (*variable*     "#C6C5FE"))
 
     (flet ((color (fgcolor &optional (bgcolor nil)) 
-                  `((t (,@(if (null fgcolor) nil `(:foreground ,fgcolor))
-                        ,@(if (null bgcolor) nil `(:background ,bgcolor))))))
+                  `((t (,@(unless (null fgcolor) `(:foreground ,fgcolor))
+                        ,@(unless (null bgcolor) `(:background ,bgcolor))))))
            (face (face fgcolor &optional (bgcolor nil))
                  `(,(intern (concat "font-lock-" face "-face")) 
                    ,(color fgcolor bgcolor))))
