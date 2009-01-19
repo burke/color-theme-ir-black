@@ -19,12 +19,13 @@
         (*class*        "#FFFFB6")
         (*variable*     "#C6C5FE"))
 
-    (flet ((color (fgcolor &optional (bgcolor nil))
+    (flet ((color (fgcolor &optional (bgcolor nil) (bold nil))
                   `((t (,@(if fgcolor `(:foreground ,fgcolor))
-                        ,@(if bgcolor `(:background ,bgcolor))))))
-           (face (face fgcolor &optional (bgcolor nil))
+                        ,@(if bgcolor `(:background ,bgcolor))
+                        ,@(if bold    '(:bold       t))))))
+           (face (face &rest args)
                  `(,(intern (concat "font-lock-" face "-face")) 
-                   ,(color fgcolor bgcolor))))
+                   ,(apply #'color args))))
 
       (color-theme-install
        `(color-theme-ir-black
