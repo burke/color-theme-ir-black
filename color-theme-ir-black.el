@@ -4,7 +4,7 @@
   "Ported from a similar vim theme by Burke Libbey"
   (interactive)
   (color-theme-install
-	'(color-theme-twilight
+	'(color-theme-ir-black
 	  ((background-color . "black")
 		(background-mode . dark)
 		(border-color . "black")
