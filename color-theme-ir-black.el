@@ -26,7 +26,7 @@
                         ,@(if italic    '(:italic     t))
                         ,@(if underline '(:underline  t))))))
            (face (face &rest args)
-                 `(,(intern (concat "font-lock-" face "-face")) 
+                 `(,(intern (concat "font-lock-" face "-face"))
                    ,(apply #'color args))))
 
       (color-theme-install
@@ -67,3 +67,5 @@
          (bold ((t (:bold t))))
          (bold-italic ((t (:bold t))))
          (underline ((nil (:underline nil)))))))))
+
+(provide 'color-theme-ir-black)
