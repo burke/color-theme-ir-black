@@ -1,5 +1,11 @@
+;;; color-theme-ir-black.el --- pastel color theme 
 ;; MIT License Copyright (c) 2009 Burke Libbey <burke@burkelibbey.org>
+;; URL: https://github.com/kurtharriger/color-theme-ir-black
+;; Author: Burke Libbey, Kurt Harriger
+;; Version: 1.0.1
+;; Package-Requires: ((color-theme "6.6.1"))
 
+(require 'color-theme)
 (defun color-theme-ir-black ()
   (interactive)
 
@@ -69,3 +75,5 @@
          (underline ((nil (:underline nil)))))))))
 
 (provide 'color-theme-ir-black)
+
+;;; color-theme-ir-black.el ends here
